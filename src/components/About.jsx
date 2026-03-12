@@ -17,9 +17,9 @@ function About() {
         </h2>
 
         <p className="section-intro">
-          I focus on building useful digital solutions that are not only clean
-          and modern, but also practical for real-world workflows, business
-          needs, and day-to-day operations.
+          I enjoy building useful digital solutions that combine clean design,
+          technical reliability, and practical value for real workflows and
+          daily operations.
         </p>
       </motion.div>
 
@@ -38,15 +38,16 @@ function About() {
           <h3>Who I Am</h3>
 
           <p>
-            I’m Marl Vincent R. Madronero, also known as Vin. I’m an IT
-            graduate from Don Honorio Ventura State University with hands-on
-            experience in IT support, troubleshooting, networking, server
-            maintenance, web development, programming, and graphic design.
+            I’m Marl Vincent R. Madronero, also known as Vin. I graduated with a
+            Bachelor of Science in Information Technology from Don Honorio
+            Ventura State University in 2024.
           </p>
 
           <p>
-            My goal is to create digital solutions that are clear, reliable, and
-            useful for actual users, teams, and business operations.
+            My background includes IT support, technical troubleshooting,
+            networking, server maintenance, web development, programming, Unity
+            development, and graphic design. I like creating work that is clear,
+            professional, and useful in real situations.
           </p>
         </motion.div>
 
@@ -64,9 +65,9 @@ function About() {
           <h3>What I Build</h3>
 
           <p>
-            I enjoy working on websites, internal tools, dashboards, and
-            practical system ideas that improve visibility, structure, and
-            productivity.
+            I focus on websites, internal tools, dashboards, and system ideas
+            that help improve organization, usability, visibility, and workflow
+            efficiency.
           </p>
         </motion.div>
 
@@ -84,9 +85,10 @@ function About() {
           <h3>Hands-On Background</h3>
 
           <p>
-            My background includes technical support roles, OJT experience, and
-            real workplace exposure where I handled system issues, hardware
-            concerns, user support, and operational tasks.
+            I’ve worked in IT-related environments including school-based support,
+            utility-related OJT experience, and my current role as IT Staff at
+            AVG Office Supply Trading, where I handle technical support and other
+            digital tasks.
           </p>
         </motion.div>
 
@@ -100,22 +102,22 @@ function About() {
           <div className="about-stats-grid">
             <div className="about-stat-item">
               <h4>IT Support</h4>
-              <p>Troubleshooting, user assistance, and system reliability.</p>
+              <p>Troubleshooting, user assistance, and technical reliability.</p>
             </div>
 
             <div className="about-stat-item">
               <h4>Web Development</h4>
-              <p>Responsive interfaces, structured layouts, and modern UI work.</p>
+              <p>Responsive interfaces, structured layouts, and modern web work.</p>
             </div>
 
             <div className="about-stat-item">
               <h4>System Thinking</h4>
-              <p>Workflow visibility, practical tools, and organized solutions.</p>
+              <p>Practical tools, workflow visibility, and organized solutions.</p>
             </div>
 
             <div className="about-stat-item">
               <h4>Continuous Learning</h4>
-              <p>Always improving technical skills and problem-solving ability.</p>
+              <p>Always improving skills, design quality, and problem-solving.</p>
             </div>
           </div>
         </motion.div>

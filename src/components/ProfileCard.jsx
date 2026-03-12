@@ -9,7 +9,7 @@ function ProfileCard() {
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <div className="profile-availability-badge">
-        Available for opportunities
+        Open for opportunities
       </div>
 
       <div className="profile-card">
@@ -29,8 +29,8 @@ function ProfileCard() {
           <h3 className="profile-name">Marl Vincent</h3>
 
           <p className="profile-description">
-            Focused on support, systems, development, and practical digital
-            problem-solving.
+            IT graduate focused on web development, technical support, and
+            practical digital solutions for real business needs.
           </p>
 
           <div className="profile-skills">
@@ -43,7 +43,7 @@ function ProfileCard() {
       </div>
 
       <div className="profile-bottom-badge">
-        IT Support • Web • Systems
+        Web • Support • Systems
       </div>
     </motion.div>
   )

@@ -7,8 +7,8 @@ function Footer() {
         <div className="footer-brand">
           <div className="footer-logo">VIN</div>
           <p className="footer-brand-text">
-            A portfolio focused on web development, IT support, and practical
-            digital solutions.
+            A personal portfolio focused on web development, IT support, and
+            practical digital solutions.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ function Footer() {
 
         <div className="footer-links-group">
           <span>Contact</span>
-          <p>marlmadronero18@gmail.com</p>
+          <p>your.email@example.com</p>
           <p>Pampanga, Philippines</p>
           <p>Open for opportunities</p>
         </div>

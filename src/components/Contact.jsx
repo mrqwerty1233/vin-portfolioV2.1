@@ -55,7 +55,7 @@ function Contact() {
           <div className="contact-info-stack">
             <div className="contact-info-premium-card">
               <span>Email</span>
-              <h3>marlmadronero18@gmail.com</h3>
+              <h3>your.email@example.com</h3>
               <p>For project inquiries, job opportunities, and collaborations.</p>
             </div>
 

@@ -15,7 +15,7 @@ const skillGroups = [
   },
   {
     title: "Creative Tools",
-    items: ["Graphic Design", "UI Thinking", "Portfolio Design"],
+    items: ["Graphic Design", "UI Thinking", "Portfolio Design", "Unity"],
   },
 ]
 
@@ -36,9 +36,8 @@ function Skills() {
         </h2>
 
         <p className="section-intro">
-          These are the technical areas I work with when building websites,
-          solving technical issues, and creating system-focused digital
-          solutions.
+          These are the technical areas I use when building websites, solving
+          technical problems, and creating practical digital solutions.
         </p>
       </motion.div>
 

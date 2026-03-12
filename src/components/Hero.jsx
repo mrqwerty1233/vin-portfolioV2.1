@@ -9,8 +9,8 @@ function Hero() {
   const yBackground = useTransform(scrollY, [0, 500], [0, 140])
   const opacity = useTransform(scrollY, [0, 300], [1, 0.25])
 
-  const headingTop = "Building Websites &"
-  const headingBottom = "Practical Systems"
+  const headingTop = "Building Modern Websites"
+  const headingBottom = "and Practical Systems"
 
   const letterAnimation = {
     hidden: { opacity: 0, y: 28 },
@@ -26,25 +26,11 @@ function Hero() {
 
   return (
     <section className="hero">
-      <motion.div
-        className="hero-bg-shape shape-one"
-        style={{ y: yBackground }}
-      />
+      <motion.div className="hero-bg-shape shape-one" style={{ y: yBackground }} />
+      <motion.div className="hero-bg-shape shape-two" style={{ y: yText }} />
+      <motion.div className="hero-bg-shape shape-three" style={{ y: yBackground }} />
 
-      <motion.div
-        className="hero-bg-shape shape-two"
-        style={{ y: yText }}
-      />
-
-      <motion.div
-        className="hero-bg-shape shape-three"
-        style={{ y: yBackground }}
-      />
-
-      <motion.div
-        className="hero-grid hero-grid-card"
-        style={{ y: yText, opacity }}
-      >
+      <motion.div className="hero-grid hero-grid-card" style={{ y: yText, opacity }}>
         <div className="hero-content">
           <motion.p
             className="hero-tag"
@@ -91,9 +77,11 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
-            I&apos;m Marl Vincent R. Madronero, an IT graduate from the
-            Philippines specializing in web development, troubleshooting, IT
-            support, networking, and business-focused digital solutions.
+            I&apos;m Marl Vincent R. Madronero, an IT graduate from the Philippines
+            with hands-on experience in IT support, troubleshooting, networking,
+            server maintenance, web development, and business-focused digital
+            solutions. I build clean websites and practical systems that are
+            useful, reliable, and easy to understand.
           </motion.p>
 
           <motion.div
@@ -104,7 +92,7 @@ function Hero() {
           >
             <div className="hero-meta-card">
               <span>Focus</span>
-              <p>Web Design • Development • Systems</p>
+              <p>Web Development • IT Support • Systems</p>
             </div>
 
             <div className="hero-meta-card">
