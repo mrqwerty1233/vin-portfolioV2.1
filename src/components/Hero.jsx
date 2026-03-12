@@ -9,8 +9,8 @@ function Hero() {
   const yBackground = useTransform(scrollY, [0, 500], [0, 140])
   const opacity = useTransform(scrollY, [0, 300], [1, 0.25])
 
-  const headingTop = "Building Modern Websites"
-  const headingBottom = "and Practical Systems"
+  const headingTop = "Building Websites &"
+  const headingBottom = "Practical Systems"
 
   const letterAnimation = {
     hidden: { opacity: 0, y: 28 },
