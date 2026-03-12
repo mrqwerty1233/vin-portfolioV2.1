@@ -23,7 +23,7 @@ function Footer() {
 
         <div className="footer-links-group">
           <span>Contact</span>
-          <p>your.email@example.com</p>
+          <p>marlmadronero18@gmail.com</p>
           <p>Pampanga, Philippines</p>
           <p>Open for opportunities</p>
         </div>
@@ -41,7 +41,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/mrqwerty1233"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -50,7 +50,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="www.linkedin.com/in/marl-vincent-madronero-733715388"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
