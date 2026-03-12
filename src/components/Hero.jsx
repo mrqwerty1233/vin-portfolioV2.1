@@ -1,30 +1,31 @@
 import { motion, useScroll, useTransform } from "framer-motion"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
+import ProfileCard from "./ProfileCard"
 
 function Hero() {
   const { scrollY } = useScroll()
 
-  const yText = useTransform(scrollY, [0, 500], [0, 110])
-  const yBackground = useTransform(scrollY, [0, 500], [0, 160])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.2])
+  const yText = useTransform(scrollY, [0, 500], [0, 80])
+  const yBackground = useTransform(scrollY, [0, 500], [0, 140])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.25])
 
-  const headingTop = "Building Reliable Systems"
-  const headingBottom = "That Improve Operations"
+  const headingTop = "Building Websites &"
+  const headingBottom = "Practical Systems"
 
   const letterAnimation = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 28 },
     visible: (index) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.025,
-        duration: 0.45,
+        delay: index * 0.02,
+        duration: 0.4,
       },
     }),
   }
 
   return (
-    <div className="hero">
+    <section className="hero">
       <motion.div
         className="hero-bg-shape shape-one"
         style={{ y: yBackground }}
@@ -40,13 +41,16 @@ function Hero() {
         style={{ y: yBackground }}
       />
 
-      <motion.div className="hero-grid" style={{ y: yText, opacity }}>
+      <motion.div
+        className="hero-grid hero-grid-card"
+        style={{ y: yText, opacity }}
+      >
         <div className="hero-content">
           <motion.p
             className="hero-tag"
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             Hello, I&apos;m Vin
           </motion.p>
@@ -70,7 +74,7 @@ function Hero() {
               {headingBottom.split("").map((letter, index) => (
                 <motion.span
                   key={`bottom-${index}`}
-                  custom={index + 20}
+                  custom={index + 24}
                   variants={letterAnimation}
                   initial="hidden"
                   animate="visible"
@@ -83,24 +87,24 @@ function Hero() {
 
           <motion.p
             className="hero-description"
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.7 }}
+            transition={{ delay: 0.35, duration: 0.6 }}
           >
             I&apos;m Marl Vincent R. Madronero, an IT graduate from the
-            Philippines specializing in troubleshooting, IT support,
-            networking, web development, and business-focused systems.
+            Philippines specializing in web development, troubleshooting, IT
+            support, networking, and business-focused digital solutions.
           </motion.p>
 
           <motion.div
             className="hero-meta"
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
           >
             <div className="hero-meta-card">
               <span>Focus</span>
-              <p>IT Support • Systems • Web Solutions</p>
+              <p>Web Design • Development • Systems</p>
             </div>
 
             <div className="hero-meta-card">
@@ -111,9 +115,9 @@ function Hero() {
 
           <motion.div
             className="hero-buttons"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.75, duration: 0.7 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
           >
             <a href="#projects" className="btn primary-btn">
               View Projects
@@ -126,9 +130,9 @@ function Hero() {
 
           <motion.div
             className="social-links"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
           >
             <a
               href="https://facebook.com/"
@@ -159,26 +163,11 @@ function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          className="hero-image-wrap"
-          initial={{ opacity: 0, scale: 0.92, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.8 }}
-        >
-          <div className="hero-image-badge hero-image-badge-top">
-            Available for opportunities
-          </div>
-
-          <div className="hero-image-frame">
-            <img src="/images/profile.jpg" alt="Vin portrait" />
-          </div>
-
-          <div className="hero-image-badge hero-image-badge-bottom">
-            IT Support • Web • Systems
-          </div>
-        </motion.div>
+        <div className="hero-profile-area">
+          <ProfileCard />
+        </div>
       </motion.div>
-    </div>
+    </section>
   )
 }
 

@@ -2,95 +2,125 @@ import { motion } from "framer-motion"
 
 function About() {
   return (
-    <div className="section-container about-section">
-      <motion.p
-        className="section-label"
-        initial={{ opacity: 0, y: 30 }}
+    <section className="section-container about-section">
+      <motion.div
+        className="section-heading-wrap"
+        initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.55 }}
         viewport={{ once: true }}
       >
-        About Me
-      </motion.p>
+        <p className="section-label">About Me</p>
 
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        I Build Practical IT and Web Solutions for Real Business Needs
-      </motion.h2>
+        <h2 className="section-title">
+          Practical IT Support, Web Development, and System-Focused Thinking
+        </h2>
 
-      <div className="about-grid">
+        <p className="section-intro">
+          I focus on building useful digital solutions that are not only clean
+          and modern, but also practical for real-world workflows, business
+          needs, and day-to-day operations.
+        </p>
+      </motion.div>
+
+      <div className="about-premium-grid">
         <motion.div
-          className="about-card"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          className="about-feature-card about-feature-card-large"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
           viewport={{ once: true }}
         >
+          <div className="about-card-top">
+            <span className="about-chip">Profile</span>
+          </div>
+
           <h3>Who I Am</h3>
+
           <p>
-            I’m Marl Vincent R. Madronero, also known as Vin. I graduated with a
-            Bachelor of Science in Information Technology from Don Honorio
-            Ventura State University in 2024. My background includes IT support,
-            technical troubleshooting, networking, server maintenance, web
-            development, programming, and graphic design.
+            I’m Marl Vincent R. Madronero, also known as Vin. I’m an IT
+            graduate from Don Honorio Ventura State University with hands-on
+            experience in IT support, troubleshooting, networking, server
+            maintenance, web development, programming, and graphic design.
+          </p>
+
+          <p>
+            My goal is to create digital solutions that are clear, reliable, and
+            useful for actual users, teams, and business operations.
           </p>
         </motion.div>
 
         <motion.div
-          className="about-card"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          className="about-feature-card"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.08, duration: 0.55 }}
           viewport={{ once: true }}
         >
-          <h3>What I Focus On</h3>
+          <div className="about-card-top">
+            <span className="about-chip">Focus</span>
+          </div>
+
+          <h3>What I Build</h3>
+
           <p>
-            I enjoy building systems that solve actual operational problems. My
-            focus is on internal tools, dashboards, workflow visibility,
-            automation-ready web systems, and user-friendly digital solutions
-            that help teams work more efficiently and make better decisions.
+            I enjoy working on websites, internal tools, dashboards, and
+            practical system ideas that improve visibility, structure, and
+            productivity.
           </p>
         </motion.div>
 
         <motion.div
-          className="about-card"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          className="about-feature-card"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.16, duration: 0.55 }}
           viewport={{ once: true }}
         >
-          <h3>Experience Snapshot</h3>
+          <div className="about-card-top">
+            <span className="about-chip">Experience</span>
+          </div>
+
+          <h3>Hands-On Background</h3>
+
           <p>
-            I have worked in IT support roles across different environments,
-            including educational institutions, utility-related OJT experience,
-            and my current role involving IT staff responsibilities, technical
-            support, and graphic design work. These experiences strengthened my
-            ability to solve issues quickly and support daily operations.
+            My background includes technical support roles, OJT experience, and
+            real workplace exposure where I handled system issues, hardware
+            concerns, user support, and operational tasks.
           </p>
         </motion.div>
 
         <motion.div
-          className="about-card"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          className="about-stats-card"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.24, duration: 0.55 }}
           viewport={{ once: true }}
         >
-          <h3>Tools & Skills</h3>
-          <p>
-            My technical skills include HTML, CSS, JavaScript, C#, Java, Python,
-            networking, troubleshooting, server maintenance, Unity development,
-            and modern web design. I aim to combine technical reliability with
-            clean, professional user experience.
-          </p>
+          <div className="about-stats-grid">
+            <div className="about-stat-item">
+              <h4>IT Support</h4>
+              <p>Troubleshooting, user assistance, and system reliability.</p>
+            </div>
+
+            <div className="about-stat-item">
+              <h4>Web Development</h4>
+              <p>Responsive interfaces, structured layouts, and modern UI work.</p>
+            </div>
+
+            <div className="about-stat-item">
+              <h4>System Thinking</h4>
+              <p>Workflow visibility, practical tools, and organized solutions.</p>
+            </div>
+
+            <div className="about-stat-item">
+              <h4>Continuous Learning</h4>
+              <p>Always improving technical skills and problem-solving ability.</p>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 

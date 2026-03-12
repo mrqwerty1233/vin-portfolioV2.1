@@ -22,87 +22,117 @@ function Contact() {
   }
 
   return (
-    <div className="section-container contact-section">
-      <motion.p
-        className="section-label"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Contact
-      </motion.p>
-
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Let’s Build Something Useful Together
-      </motion.h2>
-
-      <motion.p
-        className="contact-text"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        I’m open to opportunities in IT support, web development, internal
-        systems, and workflow-driven business solutions.
-      </motion.p>
-
+    <section className="section-container contact-section">
       <motion.div
-        className="contact-info-grid"
-        initial={{ opacity: 0, y: 30 }}
+        className="section-heading-wrap"
+        initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.5 }}
+        transition={{ duration: 0.55 }}
         viewport={{ once: true }}
       >
-        <div className="contact-info-card">
-          <span>Email</span>
-          <p>your.email@example.com</p>
-        </div>
+        <p className="section-label">Contact</p>
 
-        <div className="contact-info-card">
-          <span>Location</span>
-          <p>Pampanga, Philippines</p>
-        </div>
+        <h2 className="section-title">
+          Let&apos;s Build Something Useful Together
+        </h2>
 
-        <div className="contact-info-card">
-          <span>Availability</span>
-          <p>Open for opportunities and freelance work</p>
-        </div>
+        <p className="section-intro">
+          I&apos;m open to opportunities in IT support, web development, and
+          practical digital solutions. If you&apos;re looking for someone who
+          enjoys solving technical problems and building clean, functional work,
+          feel free to reach out.
+        </p>
       </motion.div>
 
-      <motion.form
-        className="contact-form"
-        onSubmit={sendEmail}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <input type="text" name="from_name" placeholder="Your Name" required />
-        <input
-          type="email"
-          name="from_email"
-          placeholder="Your Email"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
+      <div className="contact-premium-grid">
+        <motion.div
+          className="contact-premium-info"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          viewport={{ once: true }}
+        >
+          <div className="contact-info-stack">
+            <div className="contact-info-premium-card">
+              <span>Email</span>
+              <h3>marlmadronero18@gmail.com</h3>
+              <p>For project inquiries, job opportunities, and collaborations.</p>
+            </div>
 
-        <button className="btn primary-btn" type="submit">
-          Send Message
-        </button>
-      </motion.form>
-    </div>
+            <div className="contact-info-premium-card">
+              <span>Location</span>
+              <h3>Pampanga, Philippines</h3>
+              <p>Available for remote work, local opportunities, and freelance projects.</p>
+            </div>
+
+            <div className="contact-info-premium-card">
+              <span>Focus</span>
+              <h3>Web, Support, Systems</h3>
+              <p>
+                Interested in clean websites, technical support roles, and
+                workflow-focused digital solutions.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="contact-form-premium-card"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.08, duration: 0.55 }}
+          viewport={{ once: true }}
+        >
+          <div className="contact-form-top">
+            <span className="contact-form-chip">Send a Message</span>
+            <h3>Start a Conversation</h3>
+            <p>
+              Share a quick message and I&apos;ll get back to you as soon as I can.
+            </p>
+          </div>
+
+          <motion.form
+            className="contact-form"
+            onSubmit={sendEmail}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="contact-form-row">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              required
+            />
+
+            <textarea
+              name="message"
+              placeholder="Tell me about your project or inquiry"
+              required
+            ></textarea>
+
+            <button className="btn primary-btn" type="submit">
+              Send Message
+            </button>
+          </motion.form>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
