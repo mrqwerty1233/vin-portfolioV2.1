@@ -8,7 +8,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/mrqwerty1233/production-control-system",
-    demo: "https://sole-surgeon-crm-api.onrender.com",
+    demo: "https://production-control-system.onrender.com",
     overview:
       "This project represents my interest in building practical internal systems for business operations. It focuses on workflow tracking, visibility, and improving how teams monitor tasks and progress.",
     features: [
