@@ -4,67 +4,58 @@ const projects = [
     slug: "production-control-system",
     title: "Production Control System",
     description:
-      "A concept for an internal operations tool that tracks workflow stages, order progress, turnaround time, and production visibility.",
+      "A business-focused internal system concept for tracking workflow stages, order progress, turnaround time, and operational visibility.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/mrqwerty1233/production-control-system",
     demo: "https://production-control-system.onrender.com",
     overview:
-      "This project represents my interest in building practical internal systems for business operations. It focuses on workflow tracking, visibility, and improving how teams monitor tasks and progress.",
+      "This project is designed as an internal dashboard for monitoring production flow, order status, and team visibility. The goal is to reduce delays, improve tracking, and give management better operational insight.",
     features: [
-      "Workflow stage tracking",
-      "Order progress visibility",
-      "Operations dashboard concept",
-      "Turnaround monitoring",
+      "Order tracking dashboard",
+      "Workflow stage monitoring",
+      "Turnaround time visibility",
+      "Production status reporting",
     ],
-    tools: ["React", "JavaScript", "CSS", "System Design"],
+    tools: ["React", "JavaScript", "CSS", "Framer Motion"],
   },
   /*{
     id: 2,
     slug: "crm-system-website",
     title: "CRM System Website",
     description:
-      "A customer-focused system concept for organizing client records, tracking interactions, and supporting better service workflows.",
+      "A customer relationship management project designed to organize customer records, track service interactions, and support better business decisions.",
     image:
       "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/yourusername/crm-system-website",
     demo: "https://your-demo-link.com/crm-system-website",
     overview:
-      "This CRM project reflects my interest in structured web systems that help businesses manage customer information, service history, and engagement in a more organized way.",
+      "This CRM concept focuses on customer data organization, service history, engagement tracking, and operational structure. It is meant for businesses that need a clearer customer workflow.",
     features: [
-      "Customer record organization",
-      "Service interaction tracking",
-      "Engagement workflow concept",
+      "Customer record management",
+      "Interaction history tracking",
+      "Service request organization",
       "Business dashboard structure",
     ],
-<<<<<<< HEAD
     tools: ["React", "JavaScript", "CSS", "System Design"],
   },*/
 
-=======
-    tools: ["React", "JavaScript", "CSS", "Workflow Design"],
-  },
->>>>>>> 4e31c70a47117013a9f0c4d039af77d61b3ccb3b
   {
     id: 3,
     slug: "Payroll-Tracking-System",
     title: "Payroll-Tracking-System",
     description:
-<<<<<<< HEAD
       "The system streamlines payroll operations by turning daily attendance and payroll adjustments into clear payroll summaries, approval workflows, and expense records.",
-=======
-      "A modern animated portfolio website created to present my technical background, projects, and personal brand in a polished way.",
->>>>>>> 4e31c70a47117013a9f0c4d039af77d61b3ccb3b
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/mrqwerty1233/payroll-tracking-web-app",
     demo: "https://payroll-tracking-web-app.vercel.app/",
     overview:
-      "This portfolio project highlights my frontend skills, design sense, and ability to communicate technical work through a clean, modern user interface.",
+      "This portfolio project highlights my frontend skills, design sense, and ability to present technical information in a polished and professional way.",
     features: [
       "Animated hero section",
-      "Responsive premium layout",
-      "Portfolio case study pages",
+      "Responsive layout",
+      "Project showcase cards",
       "Professional contact section",
     ],
     tools: ["React", "Framer Motion", "CSS", "Vite"],
