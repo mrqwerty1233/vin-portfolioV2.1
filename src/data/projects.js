@@ -7,8 +7,8 @@ const projects = [
       "A business-focused internal system concept for tracking workflow stages, order progress, turnaround time, and operational visibility.",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-    github: "https://github.com/yourusername/production-control-system",
-    demo: "https://your-demo-link.com/production-control-system",
+    github: "https://github.com/mrqwerty1233/production-control-system",
+    demo: "https://production-control-system.onrender.com",
     overview:
       "This project is designed as an internal dashboard for monitoring production flow, order status, and team visibility. The goal is to reduce delays, improve tracking, and give management better operational insight.",
     features: [
@@ -19,7 +19,7 @@ const projects = [
     ],
     tools: ["React", "JavaScript", "CSS", "Framer Motion"],
   },
-  {
+  /*{
     id: 2,
     slug: "crm-system-website",
     title: "CRM System Website",
@@ -38,17 +38,18 @@ const projects = [
       "Business dashboard structure",
     ],
     tools: ["React", "JavaScript", "CSS", "System Design"],
-  },
+  },*/
+
   {
     id: 3,
-    slug: "personal-portfolio-website",
-    title: "Personal Portfolio Website",
+    slug: "Payroll-Tracking-System",
+    title: "Payroll-Tracking-System",
     description:
-      "A modern animated portfolio website built to showcase my technical background, projects, and professional identity.",
+      "The system streamlines payroll operations by turning daily attendance and payroll adjustments into clear payroll summaries, approval workflows, and expense records.",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    github: "https://github.com/yourusername/personal-portfolio",
-    demo: "https://your-demo-link.com/personal-portfolio",
+    github: "https://github.com/mrqwerty1233/payroll-tracking-web-app",
+    demo: "https://payroll-tracking-web-app.vercel.app/",
     overview:
       "This portfolio project highlights my frontend skills, design sense, and ability to present technical information in a polished and professional way.",
     features: [
