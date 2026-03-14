@@ -1,86 +1,94 @@
-import { Link, useParams } from "react-router-dom"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import projects from "../data/projects"
 
-function ProjectDetail() {
-  const { slug } = useParams()
-
-  const project = projects.find((item) => item.slug === slug)
-
-  if (!project) {
-    return (
-      <div className="section-container project-detail-page">
-        <h1>Project not found</h1>
-        <p className="contact-text">
-          The project you are looking for does not exist.
-        </p>
-        <Link to="/" className="btn primary-btn">
-          Back to Home
-        </Link>
-      </div>
-    )
-  }
-
+function Projects() {
   return (
-    <div className="project-detail-page">
-      <div className="section-container">
-        <Link to="/" className="btn secondary-btn back-btn">
-          ← Back to Home
-        </Link>
+    <section className="section-container projects-section">
+      <motion.div
+        className="section-heading-wrap"
+        initial={{ opacity: 0, y: 26 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55 }}
+        viewport={{ once: true }}
+      >
+        <p className="section-label">Featured Projects</p>
 
-        <div className="project-detail-hero">
-          <div className="project-detail-text">
-            <p className="section-label">Project Case Study</p>
-            <h1 className="project-detail-title">{project.title}</h1>
-            <p className="contact-text">{project.overview}</p>
+        <h2 className="section-title">
+          Projects That Reflect My Design, Development, and System Thinking
+        </h2>
 
-            <div className="project-buttons">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn secondary-btn"
-              >
-                GitHub
-              </a>
+        <p className="section-intro">
+          These projects showcase how I approach structure, usability, visual
+          design, and practical digital solutions for real workflows and user
+          needs.
+        </p>
+      </motion.div>
 
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="btn primary-btn"
-              >
-                Live Demo
-              </a>
+      <div className="projects-premium-grid">
+        {projects.map((project, index) => (
+          <motion.article
+            key={project.id}
+            className="project-premium-card"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.08, duration: 0.55 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <div className="project-premium-image-wrap">
+              <img src={project.image} alt={project.title} loading="lazy" />
+              <div className="project-premium-overlay" />
+              <div className="project-premium-number">0{project.id}</div>
             </div>
-          </div>
 
-          <div className="project-detail-image">
-            <img src={project.image} alt={project.title} />
-          </div>
-        </div>
+            <div className="project-premium-body">
+              <div className="project-premium-top">
+                <span className="project-premium-tag">Case Study</span>
+                <h3>{project.title}</h3>
+              </div>
 
-        <div className="project-detail-grid">
-          <div className="detail-card">
-            <h3>Key Features</h3>
-            <ul className="detail-list">
-              {project.features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-          </div>
+              <p className="project-premium-description">
+                {project.description}
+              </p>
 
-          <div className="detail-card">
-            <h3>Tools Used</h3>
-            <ul className="detail-list">
-              {project.tools.map((tool) => (
-                <li key={tool}>{tool}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+              <div className="project-premium-tools">
+                {project.tools?.slice(0, 4).map((tool) => (
+                  <span key={tool}>{tool}</span>
+                ))}
+              </div>
+
+              <div className="project-premium-actions">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn secondary-btn small-btn"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn primary-btn small-btn"
+                >
+                  Live Demo
+                </a>
+
+                <Link
+                  to={`/project/${project.slug}`}
+                  className="btn ghost-btn small-btn"
+                >
+                  Case Study
+                </Link>
+              </div>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </div>
+    </section>
   )
 }
 
-export default ProjectDetail
+export default Projects

@@ -4,80 +4,90 @@ import projects from "../data/projects"
 
 function Projects() {
   return (
-    <div className="section-container">
-      <motion.p
-        className="section-label"
-        initial={{ opacity: 0, y: 30 }}
+    <section className="section-container projects-section">
+      <motion.div
+        className="section-heading-wrap"
+        initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.55 }}
         viewport={{ once: true }}
       >
-        Featured Work
-      </motion.p>
+        <p className="section-label">Featured Projects</p>
 
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Projects That Reflect My Systems Thinking
-      </motion.h2>
+        <h2 className="section-title">
+          Projects That Reflect My Design, Development, and System Thinking
+        </h2>
 
-      <div className="projects-grid image-grid">
+        <p className="section-intro">
+          These projects showcase how I approach structure, usability, visual
+          design, and practical digital solutions for real workflows and user
+          needs.
+        </p>
+      </motion.div>
+
+      <div className="projects-premium-grid">
         {projects.map((project, index) => (
-          <motion.div
-            className="project-image-card"
+          <motion.article
             key={project.id}
-            initial={{ opacity: 0, y: 60 }}
+            className="project-premium-card"
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15, duration: 0.6 }}
+            transition={{ delay: index * 0.08, duration: 0.55 }}
             viewport={{ once: true, amount: 0.2 }}
-            whileHover={{ y: -10 }}
           >
-            <div className="project-image-wrapper">
+            <div className="project-premium-image-wrap">
               <img src={project.image} alt={project.title} loading="lazy" />
+              <div className="project-premium-overlay" />
+              <div className="project-premium-number">0{project.id}</div>
+            </div>
 
-              <div className="project-overlay">
-                <div className="project-overlay-content">
-                  <div className="project-number">0{project.id}</div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+            <div className="project-premium-body">
+              <div className="project-premium-top">
+                <span className="project-premium-tag">Case Study</span>
+                <h3>{project.title}</h3>
+              </div>
 
-                  <div className="project-buttons">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn secondary-btn small-btn"
-                    >
-                      GitHub
-                    </a>
+              <p className="project-premium-description">
+                {project.description}
+              </p>
 
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn primary-btn small-btn"
-                    >
-                      Live Demo
-                    </a>
+              <div className="project-premium-tools">
+                {project.tools?.slice(0, 4).map((tool) => (
+                  <span key={tool}>{tool}</span>
+                ))}
+              </div>
 
-                    <Link
-                      to={`/project/${project.slug}`}
-                      className="btn ghost-btn small-btn"
-                    >
-                      Case Study
-                    </Link>
-                  </div>
-                </div>
+              <div className="project-premium-actions">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn secondary-btn small-btn"
+                >
+                  GitHub
+                </a>
+
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn primary-btn small-btn"
+                >
+                  Live Demo
+                </a>
+
+                <Link
+                  to={`/project/${project.slug}`}
+                  className="btn ghost-btn small-btn"
+                >
+                  Case Study
+                </Link>
               </div>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

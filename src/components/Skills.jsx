@@ -1,70 +1,72 @@
 import { motion } from "framer-motion"
 
-const skills = [
-  "IT Support",
-  "Troubleshooting",
-  "Networking",
-  "Server Maintenance",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "C#",
-  "Java",
-  "Python",
-  "Unity Development",
-  "Graphic Design",
+const skillGroups = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React"],
+  },
+  {
+    title: "Programming",
+    items: ["Python", "Java", "C#"],
+  },
+  {
+    title: "IT & Systems",
+    items: ["Troubleshooting", "IT Support", "Networking", "Server Maintenance"],
+  },
+  {
+    title: "Creative Tools",
+    items: ["Graphic Design", "UI Thinking", "Portfolio Design", "Unity"],
+  },
 ]
 
 function Skills() {
   return (
-    <div className="section-container">
-      <motion.p
-        className="section-label"
-        initial={{ opacity: 0, y: 30 }}
+    <section className="section-container skills-section">
+      <motion.div
+        className="section-heading-wrap"
+        initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.55 }}
         viewport={{ once: true }}
       >
-        Skills
-      </motion.p>
+        <p className="section-label">Skills</p>
 
-      <motion.h2
-        className="section-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Technical Skills & Tools
-      </motion.h2>
+        <h2 className="section-title">
+          Technical Skills and Tools I Use Across Support and Development
+        </h2>
 
-      <motion.p
-        className="contact-text"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        These are the tools and technical areas I currently use across IT
-        support, web development, and system-focused projects.
-      </motion.p>
+        <p className="section-intro">
+          These are the technical areas I use when building websites, solving
+          technical problems, and creating practical digital solutions.
+        </p>
+      </motion.div>
 
-      <div className="skills-grid">
-        {skills.map((skill, index) => (
+      <div className="skills-premium-grid">
+        {skillGroups.map((group, index) => (
           <motion.div
-            key={skill}
-            className="skill-card"
-            initial={{ opacity: 0, y: 40 }}
+            key={group.title}
+            className="skills-group-card"
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.05, duration: 0.4 }}
+            transition={{ delay: index * 0.08, duration: 0.55 }}
             viewport={{ once: true }}
           >
-            {skill}
+            <div className="skills-group-head">
+              <span className="skills-group-label">Category</span>
+              <h3>{group.title}</h3>
+            </div>
+
+            <div className="skills-chip-grid">
+              {group.items.map((item) => (
+                <span key={item} className="skill-premium-chip">
+                  {item}
+                </span>
+              ))}
+            </div>
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
