@@ -41,7 +41,7 @@ const projects = [
   },*/
 
   {
-    id: 3,
+    id: 2,
     slug: "Payroll-Tracking-System",
     title: "Payroll-Tracking-System",
     description:
