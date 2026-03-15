@@ -33,14 +33,13 @@ function Contact() {
         <p className="section-label">Contact</p>
 
         <h2 className="section-title">
-          Let&apos;s Build Something Useful Together
+          Let&apos;s Connect and Build Something Useful
         </h2>
 
         <p className="section-intro">
           I&apos;m open to opportunities in IT support, web development, and
-          practical digital solutions. If you&apos;re looking for someone who
-          enjoys solving technical problems and building clean, functional work,
-          feel free to reach out.
+          practical digital work. Whether you have a project, a role, or a
+          technical need, feel free to send me a message.
         </p>
       </motion.div>
 
@@ -55,22 +54,22 @@ function Contact() {
           <div className="contact-info-stack">
             <div className="contact-info-premium-card">
               <span>Email</span>
-              <h3>marlvincent18@gmail.com</h3>
-              <p>For project inquiries, job opportunities, and collaborations.</p>
+              <h3>marlmadronero18@gmail.com</h3>
+              <p>For job opportunities, collaborations, and project inquiries.</p>
             </div>
 
             <div className="contact-info-premium-card">
               <span>Location</span>
               <h3>Pampanga, Philippines</h3>
-              <p>Available for remote work, local opportunities, and freelance projects.</p>
+              <p>Available for remote work, freelance projects, and local opportunities.</p>
             </div>
 
             <div className="contact-info-premium-card">
-              <span>Focus</span>
-              <h3>Web, Support, Systems</h3>
+              <span>Availability</span>
+              <h3>Open to Opportunities</h3>
               <p>
-                Interested in clean websites, technical support roles, and
-                workflow-focused digital solutions.
+                Interested in IT support roles, development work, and practical
+                digital solutions for real business needs.
               </p>
             </div>
           </div>
@@ -87,7 +86,7 @@ function Contact() {
             <span className="contact-form-chip">Send a Message</span>
             <h3>Start a Conversation</h3>
             <p>
-              Share a quick message and I&apos;ll get back to you as soon as I can.
+              Share a short message and I&apos;ll respond as soon as I can.
             </p>
           </div>
 
@@ -122,7 +121,7 @@ function Contact() {
 
             <textarea
               name="message"
-              placeholder="Tell me about your project or inquiry"
+              placeholder="Tell me about your project, role, or inquiry"
               required
             ></textarea>
 

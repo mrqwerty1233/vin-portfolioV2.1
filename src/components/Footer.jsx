@@ -7,8 +7,8 @@ function Footer() {
         <div className="footer-brand">
           <div className="footer-logo">VIN</div>
           <p className="footer-brand-text">
-            A personal portfolio focused on web development, IT support, and
-            practical digital solutions.
+            Personal portfolio of Marl Vincent R. Madronero — focused on web
+            development, IT support, and practical digital solutions.
           </p>
         </div>
 
@@ -17,6 +17,8 @@ function Footer() {
           <a href="/#home">Home</a>
           <a href="/#about">About</a>
           <a href="/#skills">Skills</a>
+          <a href="/#services">Services</a>
+          <a href="/#experience">Experience</a>
           <a href="/#projects">Projects</a>
           <a href="/#contact">Contact</a>
         </div>
@@ -25,7 +27,7 @@ function Footer() {
           <span>Contact</span>
           <p>marlmadronero18@gmail.com</p>
           <p>Pampanga, Philippines</p>
-          <p>Open for opportunities</p>
+          <p>Open to opportunities</p>
         </div>
 
         <div className="footer-links-group">
@@ -41,7 +43,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/mrqwerty1233"
+              href="https://github.com/"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -50,7 +52,7 @@ function Footer() {
             </a>
 
             <a
-              href="www.linkedin.com/in/marl-vincent-madronero-733715388"
+              href="https://linkedin.com/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -63,7 +65,7 @@ function Footer() {
 
       <div className="footer-premium-bottom">
         <p>© {new Date().getFullYear()} Marl Vincent R. Madronero</p>
-        <p>Built with React + Framer Motion</p>
+        <p>Built with React, Vite, and Framer Motion</p>
       </div>
     </footer>
   )

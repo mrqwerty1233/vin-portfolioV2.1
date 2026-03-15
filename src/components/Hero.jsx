@@ -9,8 +9,8 @@ function Hero() {
   const yBackground = useTransform(scrollY, [0, 500], [0, 140])
   const opacity = useTransform(scrollY, [0, 300], [1, 0.25])
 
-  const headingTop = "BuildingWebsites and"
-  const headingBottom = "PracticalSystems"
+  const headingTop = "Building Practical Websites"
+  const headingBottom = "& Digital Solutions"
 
   const letterAnimation = {
     hidden: { opacity: 0, y: 28 },
@@ -51,7 +51,7 @@ function Hero() {
                   initial="hidden"
                   animate="visible"
                 >
-                  {letter === " " ? "\u00A0" : letter}
+                  {letter}
                 </motion.span>
               ))}
             </div>
@@ -65,7 +65,7 @@ function Hero() {
                   initial="hidden"
                   animate="visible"
                 >
-                  {letter === " " ? "\u00A0" : letter}
+                  {letter}
                 </motion.span>
               ))}
             </div>
@@ -77,11 +77,11 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
-            I&apos;m Marl Vincent R. Madronero, an IT graduate from the Philippines
-            with hands-on experience in IT support, troubleshooting, networking,
-            server maintenance, web development, and business-focused digital
-            solutions. I build clean websites and practical systems that are
-            useful, reliable, and easy to understand.
+            I&apos;m Marl Vincent R. Madronero, an IT graduate based in Pampanga,
+            Philippines, with hands-on experience in IT support, troubleshooting,
+            networking, and web development. I build clean, user-friendly websites
+            and practical digital solutions that help improve day-to-day workflows
+            and technical reliability.
           </motion.p>
 
           <motion.div
@@ -92,11 +92,11 @@ function Hero() {
           >
             <div className="hero-meta-card">
               <span>Focus</span>
-              <p>Web Development • IT Support • Systems</p>
+              <p>Web Development • IT Support • Digital Solutions</p>
             </div>
 
             <div className="hero-meta-card">
-              <span>Based In</span>
+              <span>Location</span>
               <p>Pampanga, Philippines</p>
             </div>
           </motion.div>
@@ -108,7 +108,7 @@ function Hero() {
             transition={{ delay: 0.65, duration: 0.6 }}
           >
             <a href="#projects" className="btn primary-btn">
-              View Projects
+              View My Work
             </a>
 
             <a href="/resume.pdf" className="btn secondary-btn" download>

@@ -31,6 +31,21 @@ function Navbar() {
           </a>
         </li>
         <li>
+          <a href="/#tech" onClick={closeMenu}>
+            Tech
+          </a>
+        </li>
+        <li>
+          <a href="/#services" onClick={closeMenu}>
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="/#experience" onClick={closeMenu}>
+            Experience
+          </a>
+        </li>
+        <li>
           <a href="/#projects" onClick={closeMenu}>
             Projects
           </a>

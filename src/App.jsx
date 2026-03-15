@@ -1,8 +1,12 @@
 import { Routes, Route } from "react-router-dom"
+import { useEffect, useState } from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Skills from "./components/Skills"
+import TechStack from "./components/TechStack"
+import Services from "./components/Services"
+import Experience from "./components/Experience"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -10,7 +14,6 @@ import LoadingScreen from "./components/LoadingScreen"
 import CustomCursor from "./components/CustomCursor"
 import ThemeToggle from "./components/ThemeToggle"
 import ProjectDetail from "./pages/ProjectDetail"
-import { useEffect, useState } from "react"
 
 function HomePage() {
   return (
@@ -31,6 +34,21 @@ function HomePage() {
 
         <section id="skills">
           <Skills />
+          <div className="section-divider" />
+        </section>
+
+        <section id="tech">
+          <TechStack />
+          <div className="section-divider" />
+        </section>
+
+        <section id="services">
+          <Services />
+          <div className="section-divider" />
+        </section>
+
+        <section id="experience">
+          <Experience />
           <div className="section-divider" />
         </section>
 
