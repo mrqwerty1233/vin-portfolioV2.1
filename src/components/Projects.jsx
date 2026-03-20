@@ -43,7 +43,6 @@ function Projects() {
 
             <div className="project-premium-body">
               <div className="project-premium-top">
-                <span className="project-premium-tag">Case Study</span>
                 <h3>{project.title}</h3>
               </div>
 
@@ -75,13 +74,6 @@ function Projects() {
                 >
                   Live Demo
                 </a>
-
-                <Link
-                  to={`/project/${project.slug}`}
-                  className="btn ghost-btn small-btn"
-                >
-                  Case Study
-                </Link>
               </div>
             </div>
           </motion.article>
