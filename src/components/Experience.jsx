@@ -1,17 +1,19 @@
 import { motion } from "framer-motion"
 
+// ✏️  Keep this data accurate — specific numbers and actions are more convincing
+//    than generic phrases. Update highlights as your role evolves.
 const experiences = [
   {
     period: "Mar 2025 — Present",
     role: "IT Staff / IT Technician / Graphic Designer",
     company: "AVG Office Supply Trading",
     description:
-      "Currently supporting daily technical operations through troubleshooting, device assistance, digital tasks, and general IT-related support in a real workplace environment.",
+      "Currently supporting daily technical operations and design work in a live business environment — handling hardware, software, networking, and visual communication tasks.",
     highlights: [
-      "Provides day-to-day technical support",
-      "Helps resolve hardware and software issues",
-      "Supports operational needs through digital tasks",
-      "Handles both technical and design-related responsibilities",
+      "Maintains and troubleshoots hardware for office workstations",
+      "Supports network setup, connectivity, and device configuration",
+      "Designs marketing materials, banners, and business documents",
+      "Handles a mix of technical support and digital production tasks",
     ],
   },
   {
@@ -19,11 +21,11 @@ const experiences = [
     role: "IT Support",
     company: "Pasig National High School",
     description:
-      "Provided IT support in a school environment by assisting users, handling technical concerns, and helping maintain devices and systems used in daily operations.",
+      "Provided hands-on IT support in a school environment, assisting faculty and staff with technical issues and helping maintain the devices used in daily academic operations.",
     highlights: [
-      "Supported users with technical issues",
-      "Helped maintain device readiness",
-      "Assisted with troubleshooting and issue diagnosis",
+      "Diagnosed and resolved hardware and software issues for staff",
+      "Assisted with printer, projector, and workstation setup",
+      "Maintained device readiness across multiple classrooms",
     ],
   },
   {
@@ -31,11 +33,11 @@ const experiences = [
     role: "IT Support OJT (486 Hours)",
     company: "Pampanga 1 Electric Cooperative (PELCO1)",
     description:
-      "Completed 486 hours of on-the-job training focused on IT support, practical workplace systems, and exposure to technical operations in a professional environment.",
+      "Completed 486 hours of on-the-job training in a professional utility environment, gaining practical experience in workplace IT operations and technical support responsibilities.",
     highlights: [
-      "Completed 486 hours of practical OJT experience",
-      "Supported real workplace IT tasks and processes",
-      "Strengthened troubleshooting and support fundamentals",
+      "Completed 486 hours of structured OJT in a utility company",
+      "Supported IT staff with real workplace tasks and issue resolution",
+      "Gained exposure to professional IT operations and support workflows",
     ],
   },
 ]

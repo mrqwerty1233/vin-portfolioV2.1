@@ -14,10 +14,10 @@ function Footer() {
 
         <div className="footer-links-group">
           <span>Navigation</span>
+          {/* Keep in sync with Navbar.jsx */}
           <a href="/#home">Home</a>
           <a href="/#about">About</a>
           <a href="/#skills">Skills</a>
-          <a href="/#services">Services</a>
           <a href="/#experience">Experience</a>
           <a href="/#projects">Projects</a>
           <a href="/#contact">Contact</a>
@@ -25,7 +25,7 @@ function Footer() {
 
         <div className="footer-links-group">
           <span>Contact</span>
-          <p>marlmadronero18@gmail.com</p>
+          <a href="mailto:marlmadronero18@gmail.com">marlmadronero18@gmail.com</a>
           <p>Pampanga, Philippines</p>
           <p>Open to opportunities</p>
         </div>
@@ -33,8 +33,9 @@ function Footer() {
         <div className="footer-links-group">
           <span>Socials</span>
           <div className="footer-socials">
+            {/* ✏️  Replace href values with your actual profile URLs */}
             <a
-              href="https://facebook.com/"
+              href="https://facebook.com/YOUR_FACEBOOK_USERNAME"
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
@@ -43,7 +44,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/mrqwerty1233"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -52,7 +53,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

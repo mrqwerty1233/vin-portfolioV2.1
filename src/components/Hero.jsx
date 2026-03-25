@@ -122,8 +122,9 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
+            {/* ✏️  REPLACE the href values below with your actual profile URLs */}
             <a
-              href="https://facebook.com/"
+              href="https://facebook.com/YOUR_FACEBOOK_USERNAME"
               target="_blank"
               rel="noreferrer"
               aria-label="Facebook"
@@ -132,7 +133,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/mrqwerty1233"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -141,7 +142,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

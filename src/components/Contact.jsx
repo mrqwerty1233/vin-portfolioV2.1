@@ -1,23 +1,39 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 📧  EmailJS setup — follow these steps once:
+//   1. Sign up free at https://www.emailjs.com
+//   2. Add a Gmail (or any) Email Service → copy the Service ID
+//   3. Create an Email Template → copy the Template ID
+//      Template variables to use: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+//   4. Go to Account → API Keys → copy your Public Key
+//   5. Paste all three values into the constants below
+// ─────────────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID"   // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"  // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY"   // e.g. "abcDEFghiJKL"
+
 function Contact() {
+  const [status, setStatus] = useState("idle") // "idle" | "sending" | "success" | "error"
+
   const sendEmail = async (event) => {
     event.preventDefault()
+    setStatus("sending")
 
     try {
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         event.target,
-        "YOUR_PUBLIC_KEY"
+        EMAILJS_PUBLIC_KEY
       )
-
-      alert("Message sent successfully.")
+      setStatus("success")
       event.target.reset()
     } catch (error) {
-      alert("Failed to send message. Please try again.")
-      console.error(error)
+      console.error("EmailJS error:", error)
+      setStatus("error")
     }
   }
 
@@ -103,12 +119,14 @@ function Contact() {
                 name="from_name"
                 placeholder="Your Name"
                 required
+                disabled={status === "sending" || status === "success"}
               />
               <input
                 type="email"
                 name="from_email"
                 placeholder="Your Email"
                 required
+                disabled={status === "sending" || status === "success"}
               />
             </div>
 
@@ -117,17 +135,39 @@ function Contact() {
               name="subject"
               placeholder="Subject"
               required
+              disabled={status === "sending" || status === "success"}
             />
 
             <textarea
               name="message"
               placeholder="Tell me about your project, role, or inquiry"
               required
+              disabled={status === "sending" || status === "success"}
             ></textarea>
 
-            <button className="btn primary-btn" type="submit">
-              Send Message
+            {/* Submit button — changes label based on state */}
+            <button
+              className="btn primary-btn"
+              type="submit"
+              disabled={status === "sending" || status === "success"}
+            >
+              {status === "sending" && "Sending…"}
+              {status === "success" && "Message Sent ✓"}
+              {(status === "idle" || status === "error") && "Send Message"}
             </button>
+
+            {/* Inline feedback — no browser alert() */}
+            {status === "success" && (
+              <p className="form-feedback form-feedback-success">
+                Message sent! I&apos;ll get back to you as soon as possible.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="form-feedback form-feedback-error">
+                Something went wrong. Please try emailing me directly at{" "}
+                <a href="mailto:marlmadronero18@gmail.com">marlmadronero18@gmail.com</a>.
+              </p>
+            )}
           </motion.form>
         </motion.div>
       </div>
