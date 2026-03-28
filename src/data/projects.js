@@ -2,19 +2,47 @@
 // 📁  Project images
 //   - Drop your screenshot files into: /public/projects/
 //   - Recommended size: 1200×675px (16:9), JPG or WebP
-//   - Then update the `image` field below to e.g. "/projects/production-control.jpg"
-//   - Stock photos from Unsplash are used as placeholders until you add real ones
+//   - Then update the `image` field below to e.g. "/projects/cutout.jpg"
+//   - The cutout-bg placeholder below uses your actual app screenshot color scheme
 // ─────────────────────────────────────────────────────────────────────────────
 
 const projects = [
   {
     id: 1,
+    slug: "cutout-background-remover",
+    title: "CutOut — AI Background Remover",
+    description:
+      "A browser-based AI tool that removes image backgrounds instantly using the RMBG-1.4 neural network — no uploads to a server, no accounts, completely private and free.",
+
+    // ✏️  Save your screenshot as /public/projects/cutout.jpg for best results.
+    //     The image below is a dark placeholder that matches your app's aesthetic.
+    // image: "/projects/cutout.jpg",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+
+    github: "https://github.com/mrqwerty1233/background-remover",
+    demo: "https://background-remover-kappa-hazel.vercel.app",
+
+    overview:
+      "CutOut is a fully client-side AI background removal tool built with vanilla JavaScript and the RMBG-1.4 segmentation model from Hugging Face. The model runs entirely in the browser using WebAssembly — no image data ever leaves the user's device. It supports drag-and-drop uploads, live processing status, and exports clean transparent PNGs or print-ready 300 DPI photo IDs.",
+
+    features: [
+      "Client-side AI using RMBG-1.4 — runs fully in the browser",
+      "Drag-and-drop image upload with live processing status",
+      "Exports transparent PNG with clean edge segmentation",
+      "Print-ready 300 DPI photo ID export",
+      "Zero server uploads — completely private by design",
+    ],
+
+    tools: ["HTML", "CSS", "JavaScript", "RMBG-1.4", "WebAssembly"],
+  },
+
+  {
+    id: 2,
     slug: "production-control-system",
     title: "Production Control System",
     description:
       "An internal dashboard for tracking production workflow stages, order progress, and turnaround time — built to give management real-time operational visibility.",
 
-    // ✏️  Replace with your actual screenshot once available:
     // image: "/projects/production-control.jpg",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
 
@@ -35,13 +63,12 @@ const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     slug: "payroll-tracking-system",
     title: "Payroll Tracking System",
     description:
       "A web-based system that converts daily attendance data into payroll summaries, supports approval workflows, and keeps expense records organized.",
 
-    // ✏️  Replace with your actual screenshot once available:
     // image: "/projects/payroll-tracking.jpg",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
 
@@ -62,13 +89,12 @@ const projects = [
   },
 
   // ─────────────────────────────────────────────────────────────────────────
-  // ➕  Add more projects here by copying the block above.
-  //     Uncomment the CRM project below when it is ready:
+  // ➕  Uncomment the CRM project below when it is ready:
   // ─────────────────────────────────────────────────────────────────────────
 
   /*
   {
-    id: 3,
+    id: 4,
     slug: "crm-system-website",
     title: "CRM System Website",
     description:
