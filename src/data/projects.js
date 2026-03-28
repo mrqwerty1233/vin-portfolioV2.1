@@ -17,7 +17,7 @@ const projects = [
     // ✏️  Save your screenshot as /public/projects/cutout.jpg for best results.
     //     The image below is a dark placeholder that matches your app's aesthetic.
     // image: "/projects/cutout.jpg",
-    image: "/projects/cutout.JPG",
+    image: "public/projects/cutout.jpg",
 
     github: "https://github.com/mrqwerty1233/background-remover",
     demo: "https://background-remover-kappa-hazel.vercel.app",
@@ -44,7 +44,7 @@ const projects = [
       "An internal dashboard for tracking production workflow stages, order progress, and turnaround time — built to give management real-time operational visibility.",
 
     // image: "/projects/production-control.jpg",
-    image: "/projects/production-control.jpg",
+    image: "public/projects/production-control.jpg",
 
     github: "https://github.com/mrqwerty1233/production-control-system",
     demo: "https://production-control-system.onrender.com",
@@ -70,7 +70,7 @@ const projects = [
       "A web-based system that converts daily attendance data into payroll summaries, supports approval workflows, and keeps expense records organized.",
 
     // image: "/projects/payroll-tracking.jpg",
-    image: "/projects/payroll-tracking-app.jpg",
+    image: "public/projects/payroll-tracking-app.jpg",
 
     github: "https://github.com/mrqwerty1233/payroll-tracking-web-app",
     demo: "https://payroll-tracking-web-app.vercel.app/",
