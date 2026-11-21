@@ -1,128 +1,132 @@
 import { motion } from "framer-motion"
 
+const principles = [
+  {
+    num: "01",
+    title: "Function-First Visual Hierarchy",
+    body: "Every typographic scale, spacing token, and contrast decision serves a purpose: helping users scan information and complete tasks without friction.",
+  },
+  {
+    num: "02",
+    title: "Grounded in Real Operations",
+    body: "Working directly with office staff, teachers, and technicians taught me how people actually interact with software under daily time pressure.",
+  },
+  {
+    num: "03",
+    title: "Clean Component Architecture",
+    body: "I write modular React and custom CSS without bloated dependencies, ensuring fast load times, smooth responsiveness, and easy long-term maintenance.",
+  },
+  {
+    num: "04",
+    title: "Thorough Documentation & Follow-Through",
+    body: "Whether resolving an IT support ticket or shipping a web interface, I document edge cases clearly and verify solutions end-to-end.",
+  },
+]
+
 function About() {
   return (
-    <section className="section-container about-section">
-      <motion.div
-        className="section-heading-wrap"
-        initial={{ opacity: 0, y: 26 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55 }}
-        viewport={{ once: true }}
-      >
-        <p className="section-label">About Me</p>
-
-        <h2 className="section-title">
-          Practical IT Support, Web Development, and System-Focused Thinking
-        </h2>
-
-        <p className="section-intro">
-          I enjoy building useful digital solutions that combine clean design,
-          technical reliability, and practical value for real workflows and
-          daily operations.
-        </p>
-      </motion.div>
-
-      <div className="about-premium-grid">
+    <div className="section-block about-block">
+      <div className="container">
         <motion.div
-          className="about-feature-card about-feature-card-large"
-          initial={{ opacity: 0, y: 28 }}
+          className="section-header-grid"
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="about-card-top">
-            <span className="about-chip">Profile</span>
+          <div className="section-header-left">
+            <span className="section-index">03 // PROFILE &amp; PHILOSOPHY</span>
+            <h2 className="section-heading">
+              A Web Designer &amp; Developer Who Understands the Workplace Floor
+            </h2>
           </div>
 
-          <h3>Who I Am</h3>
-
-          <p>
-            I’m Marl Vincent R. Madronero, also known as Vin. I graduated with a
-            Bachelor of Science in Information Technology from Don Honorio
-            Ventura State University in 2024.
-          </p>
-
-          <p>
-            My background includes IT support, technical troubleshooting,
-            networking, server maintenance, web development, programming, Unity
-            development, and graphic design. I like creating work that is clear,
-            professional, and useful in real situations.
+          <p className="section-lead">
+            Great digital tools aren&apos;t built in a vacuum. My background blends
+            modern UI/UX web design and frontend development with hands-on IT
+            support and graphic production.
           </p>
         </motion.div>
 
-        <motion.div
-          className="about-feature-card"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.08, duration: 0.55 }}
-          viewport={{ once: true }}
-        >
-          <div className="about-card-top">
-            <span className="about-chip">Focus</span>
+        <div className="about-editorial-layout">
+          <motion.div
+            className="about-narrative-col"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="about-narrative-title">
+              Bridging visual craft with practical systems thinking.
+            </h3>
+
+            <p className="about-paragraph">
+              I&apos;m <strong>Marl Vincent R. Madronero</strong> (Vin), an
+              Information Technology graduate from{" "}
+              <strong>Don Honorio Ventura State University (Class of 2024)</strong>{" "}
+              based in Candaba, Pampanga.
+            </p>
+
+            <p className="about-paragraph">
+              Across my work at <strong>AVG Office Supply Trading</strong>,{" "}
+              <strong>Pasig National High School</strong>, and{" "}
+              <strong>Pampanga 1 Electric Cooperative (PELCO 1)</strong>, I&apos;ve
+              seen firsthand how much time organizations lose to clunky interfaces,
+              manual spreadsheets, and preventable technical bottlenecks.
+            </p>
+
+            <p className="about-paragraph">
+              That perspective drives how I design and build for the web. I craft
+              interfaces that look refined and authoritative while remaining
+              effortlessly clear for everyday users—whether it&apos;s an AI background
+              removal studio for print workflows or an internal payroll and
+              production tracker.
+            </p>
+
+            <div className="about-education-ledger">
+              <div className="ledger-header">
+                <span className="mono-index">ACADEMIC CREDENTIALS</span>
+              </div>
+              <div className="ledger-item">
+                <div>
+                  <h4>Bachelor of Science in Information Technology</h4>
+                  <p>Don Honorio Ventura State University (DHVSU)</p>
+                </div>
+                <span className="ledger-year">Graduated 2024</span>
+              </div>
+              <div className="ledger-item">
+                <div>
+                  <h4>Senior High School — General Academic Strand (GAS)</h4>
+                  <p>Pasig National High School, Candaba, Pampanga</p>
+                </div>
+                <span className="ledger-year">2017 — 2019</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="about-principles-col">
+            <div className="principles-list">
+              {principles.map((item, idx) => (
+                <motion.div
+                  key={item.num}
+                  className="principle-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.07, duration: 0.45 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="principle-num">{item.num}</span>
+                  <div className="principle-copy">
+                    <h4>{item.title}</h4>
+                    <p>{item.body}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-
-          <h3>What I Build</h3>
-
-          <p>
-            I focus on websites, internal tools, dashboards, and system ideas
-            that help improve organization, usability, visibility, and workflow
-            efficiency.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="about-feature-card"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.16, duration: 0.55 }}
-          viewport={{ once: true }}
-        >
-          <div className="about-card-top">
-            <span className="about-chip">Experience</span>
-          </div>
-
-          <h3>Hands-On Background</h3>
-
-          <p>
-            I’ve worked in IT-related environments including school-based support,
-            utility-related OJT experience, and my current role as IT Staff at
-            AVG Office Supply Trading, where I handle technical support and other
-            digital tasks.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="about-stats-card"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.24, duration: 0.55 }}
-          viewport={{ once: true }}
-        >
-          <div className="about-stats-grid">
-            <div className="about-stat-item">
-              <h4>IT Support</h4>
-              <p>Troubleshooting, user assistance, and technical reliability.</p>
-            </div>
-
-            <div className="about-stat-item">
-              <h4>Web Development</h4>
-              <p>Responsive interfaces, structured layouts, and modern web work.</p>
-            </div>
-
-            <div className="about-stat-item">
-              <h4>System Thinking</h4>
-              <p>Practical tools, workflow visibility, and organized solutions.</p>
-            </div>
-
-            <div className="about-stat-item">
-              <h4>Continuous Learning</h4>
-              <p>Always improving skills, design quality, and problem-solving.</p>
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 

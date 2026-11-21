@@ -1,60 +1,64 @@
-import { Routes, Route } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { Routes, Route, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
+import Projects from "./components/Projects"
+import Services from "./components/Services"
 import About from "./components/About"
 import Skills from "./components/Skills"
-import TechStack from "./components/TechStack"
-import Services from "./components/Services"
 import Experience from "./components/Experience"
-import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
-import LoadingScreen from "./components/LoadingScreen"
-import CustomCursor from "./components/CustomCursor"
-import ThemeToggle from "./components/ThemeToggle"
 import ProjectDetail from "./pages/ProjectDetail"
+
+function ScrollHandler() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "")
+      const element = document.getElementById(id)
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" })
+        }, 60)
+        return
+      }
+    }
+    window.scrollTo({ top: 0, behavior: "instant" })
+  }, [pathname, hash])
+
+  return null
+}
 
 function HomePage() {
   return (
     <>
       <Navbar />
-      <ThemeToggle />
 
       <main>
         <section id="home">
           <Hero />
-          <div className="section-divider" />
-        </section>
-
-        <section id="about">
-          <About />
-          <div className="section-divider" />
-        </section>
-
-        <section id="skills">
-          <Skills />
-          <div className="section-divider" />
-        </section>
-
-        <section id="tech">
-          <TechStack />
-          <div className="section-divider" />
-        </section>
-
-        <section id="services">
-          <Services />
-          <div className="section-divider" />
-        </section>
-
-        <section id="experience">
-          <Experience />
-          <div className="section-divider" />
         </section>
 
         <section id="projects">
           <Projects />
-          <div className="section-divider" />
+        </section>
+
+        <section id="services">
+          <Services />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="experience">
+          <Experience />
         </section>
 
         <section id="contact">
@@ -68,28 +72,13 @@ function HomePage() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1800)
-
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <>
-      <CustomCursor />
-
-      {isLoading ? (
-        <LoadingScreen />
-      ) : (
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/project/:slug" element={<ProjectDetail />} />
-        </Routes>
-      )}
+      <ScrollHandler />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/:slug" element={<ProjectDetail />} />
+      </Routes>
     </>
   )
 }

@@ -1,142 +1,131 @@
 import { motion } from "framer-motion"
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaPython,
+  FaJava,
+  FaGitAlt,
+  FaNetworkWired,
+  FaTools,
+  FaPenNib,
+  FaLayerGroup,
+} from "react-icons/fa"
+import { SiJavascript, SiVite, SiFramer, SiUnity } from "react-icons/si"
+import { HiOutlineCodeBracket, HiOutlineServerStack } from "react-icons/hi2"
 
-const skillBars = [
+const skillDomains = [
   {
-    title: "Web Development",
-    level: 88,
-    description: "Building responsive interfaces, structured layouts, and modern frontend experiences.",
+    code: "DOM-01",
+    category: "Frontend & UI Engineering",
+    summary:
+      "Architecting responsive, accessible web applications with modern component patterns, semantic HTML5, and custom CSS design systems.",
+    tools: [
+      { name: "React 19", role: "UI Components & SPA State", icon: <FaReact /> },
+      { name: "JavaScript (ES6+)", role: "DOM Logic & WebAssembly", icon: <SiJavascript /> },
+      { name: "CSS3 Architecture", role: "Grid, Flexbox & Design Tokens", icon: <FaCss3Alt /> },
+      { name: "HTML5 Semantic UI", role: "Accessible Structure & SEO", icon: <FaHtml5 /> },
+      { name: "Vite", role: "Frontend Build & Bundling", icon: <SiVite /> },
+      { name: "Framer Motion", role: "Choreographed UI Motion", icon: <SiFramer /> },
+    ],
   },
   {
-    title: "IT Support & Troubleshooting",
-    level: 90,
-    description: "Diagnosing issues, assisting users, and maintaining reliable day-to-day technical operations.",
+    code: "DOM-02",
+    category: "UI/UX & Visual Communication",
+    summary:
+      "Designing high-clarity user interfaces, operational dashboards, and commercial print/digital graphics with disciplined typography.",
+    tools: [
+      { name: "UI/UX Layout Systems", role: "Wireframing & Visual Hierarchy", icon: <FaLayerGroup /> },
+      { name: "Graphic & Print Design", role: "Banners, IDs & Brand Collateral", icon: <FaPenNib /> },
+    ],
   },
   {
-    title: "Programming",
-    level: 80,
-    description: "Working with JavaScript, Python, Java, and C# for practical academic and personal projects.",
+    code: "DOM-03",
+    category: "Programming & Software Logic",
+    summary:
+      "Multi-language programming background across object-oriented, scripting, and interactive game/simulation environments.",
+    tools: [
+      { name: "Python", role: "Scripting & Automation Logic", icon: <FaPython /> },
+      { name: "C# & .NET Logic", role: "Object-Oriented Applications", icon: <HiOutlineCodeBracket /> },
+      { name: "Java", role: "Core Software Engineering", icon: <FaJava /> },
+      { name: "Unity Engine", role: "Interactive 2D/3D Systems", icon: <SiUnity /> },
+      { name: "Git & GitHub", role: "Version Control & Releases", icon: <FaGitAlt /> },
+    ],
   },
   {
-    title: "Networking & Systems",
-    level: 76,
-    description: "Handling networking basics, system setup, maintenance, and technical support responsibilities.",
-  },
-]
-
-const skillGroups = [
-  {
-    title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React"],
-  },
-  {
-    title: "Programming",
-    items: ["Python", "Java", "C#"],
-  },
-  {
-    title: "IT & Systems",
-    items: ["Troubleshooting", "IT Support", "Networking", "Server Maintenance"],
-  },
-  {
-    title: "Creative Tools",
-    items: ["Graphic Design", "UI Thinking", "Portfolio Design", "Unity"],
+    code: "DOM-04",
+    category: "IT Infrastructure & Technical Support",
+    summary:
+      "Maintaining day-to-day operational continuity across office workstations, local networks, servers, and enterprise peripherals.",
+    tools: [
+      { name: "Hardware & OS Diagnostics", role: "PC Assembly, Repair & Setup", icon: <FaTools /> },
+      { name: "Networking & Connectivity", role: "LAN, Wi-Fi & Device Routing", icon: <FaNetworkWired /> },
+      { name: "Server & System Upkeep", role: "Maintenance & Issue Logs", icon: <HiOutlineServerStack /> },
+    ],
   },
 ]
 
 function Skills() {
   return (
-    <section className="section-container skills-section">
-      <motion.div
-        className="section-heading-wrap"
-        initial={{ opacity: 0, y: 26 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55 }}
-        viewport={{ once: true }}
-      >
-        <p className="section-label">Skills</p>
-
-        <h2 className="section-title">
-          Technical Strengths Across Support, Development, and Practical Systems
-        </h2>
-
-        <p className="section-intro">
-          These are the technical areas I rely on when building websites, solving
-          technical issues, and creating useful digital solutions for real-world needs.
-        </p>
-      </motion.div>
-
-      <div className="skills-visual-grid">
+    <div className="section-block skills-block">
+      <div className="container">
         <motion.div
-          className="skills-bars-card"
-          initial={{ opacity: 0, y: 28 }}
+          className="section-header-grid"
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <div className="skills-card-top">
-            <span className="skills-chip">Overview</span>
+          <div className="section-header-left">
+            <span className="section-index">04 // TECHNICAL STACK</span>
+            <h2 className="section-heading">
+              Disciplines, Languages &amp; Production Toolkit
+            </h2>
           </div>
 
-          <h3 className="skills-visual-title">Core Skill Areas</h3>
-
-          <div className="skills-bars-list">
-            {skillBars.map((skill, index) => (
-              <motion.div
-                key={skill.title}
-                className="skill-bar-item"
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08, duration: 0.45 }}
-                viewport={{ once: true }}
-              >
-                <div className="skill-bar-head">
-                  <div>
-                    <h4>{skill.title}</h4>
-                    <p>{skill.description}</p>
-                  </div>
-                  <span>{skill.level}%</span>
-                </div>
-
-                <div className="skill-bar-track">
-                  <motion.div
-                    className="skill-bar-fill"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ delay: 0.2 + index * 0.08, duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <p className="section-lead">
+            A structured breakdown of the technologies, design disciplines, and
+            infrastructure tools I use to design interfaces, ship web
+            applications, and support live business operations.
+          </p>
         </motion.div>
 
-        <div className="skills-premium-grid">
-          {skillGroups.map((group, index) => (
+        <div className="stack-domains-grid">
+          {skillDomains.map((domain, idx) => (
             <motion.div
-              key={group.title}
-              className="skills-group-card"
-              initial={{ opacity: 0, y: 28 }}
+              key={domain.code}
+              className="stack-domain-card"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08, duration: 0.55 }}
+              transition={{ delay: idx * 0.07, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="skills-group-head">
-                <span className="skills-group-label">Category</span>
-                <h3>{group.title}</h3>
+              <div className="stack-domain-header">
+                <div className="stack-domain-meta">
+                  <span className="mono-index">{domain.code}</span>
+                  <h3>{domain.category}</h3>
+                </div>
+                <p className="stack-domain-summary">{domain.summary}</p>
               </div>
 
-              <div className="skills-chip-grid">
-                {group.items.map((item) => (
-                  <span key={item} className="skill-premium-chip">
-                    {item}
-                  </span>
+              <div className="stack-tools-grid">
+                {domain.tools.map((tool) => (
+                  <div key={tool.name} className="stack-tool-cell">
+                    <div className="stack-tool-icon" aria-hidden="true">
+                      {tool.icon}
+                    </div>
+                    <div className="stack-tool-info">
+                      <h4>{tool.name}</h4>
+                      <span>{tool.role}</span>
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

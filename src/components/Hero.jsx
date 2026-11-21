@@ -1,162 +1,154 @@
-import { motion, useScroll, useTransform } from "framer-motion"
-import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { FaGithub } from "react-icons/fa"
+import { HiArrowUpRight, HiArrowDownTray, HiOutlineEnvelope, HiOutlinePhone } from "react-icons/hi2"
 import ProfileCard from "./ProfileCard"
 
+const heroMetrics = [
+  {
+    value: "03+",
+    label: "Live Web Systems",
+    detail: "Deployed on Vercel & Render",
+  },
+  {
+    value: "BSIT '24",
+    label: "Academic Foundation",
+    detail: "Don Honorio Ventura State Univ.",
+  },
+  {
+    value: "486 hrs",
+    label: "Utility IT Field Training",
+    detail: "PELCO 1 + DSWD KALAHI Program",
+  },
+  {
+    value: "100%",
+    label: "End-to-End Ownership",
+    detail: "UI Design, Frontend & IT Ops",
+  },
+]
+
 function Hero() {
-  const { scrollY } = useScroll()
-
-  const yText = useTransform(scrollY, [0, 500], [0, 80])
-  const yBackground = useTransform(scrollY, [0, 500], [0, 140])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.25])
-
-  const headingTop = "Building Websites"
-  const headingBottom = "& Digital Solutions"
-
-  const letterAnimation = {
-    hidden: { opacity: 0, y: 28 },
-    visible: (index) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index * 0.02,
-        duration: 0.4,
-      },
-    }),
-  }
-
   return (
-    <section className="hero">
-      <motion.div className="hero-bg-shape shape-one" style={{ y: yBackground }} />
-      <motion.div className="hero-bg-shape shape-two" style={{ y: yText }} />
-      <motion.div className="hero-bg-shape shape-three" style={{ y: yBackground }} />
+    <div className="hero-section">
+      <div className="hero-ambient-light" aria-hidden="true" />
 
-      <motion.div className="hero-grid hero-grid-card" style={{ y: yText, opacity }}>
-        <div className="hero-content">
-          <motion.p
-            className="hero-tag"
-            initial={{ opacity: 0, y: 18 }}
+      <div className="container hero-layout">
+        <div className="hero-main-col">
+          <motion.div
+            className="hero-index-line"
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.45 }}
           >
-            Hello, I&apos;m Vin
-          </motion.p>
+            <span className="mono-index">00 // STUDIO PORTFOLIO</span>
+            <span className="index-divider" aria-hidden="true" />
+            <span className="mono-sub">UI/UX DESIGN • FRONTEND • IT SYSTEMS</span>
+          </motion.div>
 
-          <div className="hero-title premium-title">
-            <div className="hero-title-line">
-              {headingTop.split("").map((letter, index) => (
-                <motion.span
-                  key={`top-${index}`}
-                  custom={index}
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
-
-            <div className="hero-title-line hero-title-line-accent">
-              {headingBottom.split("").map((letter, index) => (
-                <motion.span
-                  key={`bottom-${index}`}
-                  custom={index + 24}
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-
-          <motion.p
-            className="hero-description"
+          <motion.h1
+            className="hero-headline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
           >
-            I&apos;m Marl Vincent R. Madronero, an IT graduate based in Pampanga,
-            Philippines, with hands-on experience in IT support, troubleshooting,
-            networking, and web development. I build clean, user-friendly websites
-            and practical digital solutions that help improve day-to-day workflows
-            and technical reliability.
+            Designing clarity into{" "}
+            <span className="headline-serif-italic">web interfaces</span> &amp;
+            operational business systems.
+          </motion.h1>
+
+          <motion.p
+            className="hero-lead"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
+          >
+            I&apos;m <strong>Marl Vincent R. Madronero (Vin)</strong> — a Web Designer,
+            Frontend Developer, and IT Specialist based in Pampanga, Philippines.
+            I combine clean visual hierarchy and modern React architecture with
+            hands-on workplace IT troubleshooting to build websites and internal
+            tools that teams actually enjoy using.
           </motion.p>
 
           <motion.div
-            className="hero-meta"
-            initial={{ opacity: 0, y: 22 }}
+            className="hero-cta-group"
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ duration: 0.55, delay: 0.24 }}
           >
-            <div className="hero-meta-card">
-              <span>Focus</span>
-              <p>Web Development • IT Support • Digital Solutions</p>
-            </div>
-
-            <div className="hero-meta-card">
-              <span>Location</span>
-              <p>Pampanga, Philippines</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65, duration: 0.6 }}
-          >
-            <a href="#projects" className="btn primary-btn">
-              View My Work
+            <a href="#projects" id="hero-explore-work-btn" className="btn primary-btn">
+              <span>Explore Selected Work</span>
+              <HiArrowUpRight />
             </a>
 
-            <a href="/resume.pdf" className="btn secondary-btn" download>
-              Download Resume
-            </a>
-          </motion.div>
-
-          <motion.div
-            className="social-links"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-          >
-            {/* ✏️  REPLACE the href values below with your actual profile URLs */}
             <a
-              href="https://facebook.com/YOUR_FACEBOOK_USERNAME"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
+              href="/resume.pdf"
+              download
+              id="hero-download-resume-btn"
+              className="btn secondary-btn"
             >
-              <FaFacebookF />
+              <HiArrowDownTray />
+              <span>Download Resume</span>
             </a>
+          </motion.div>
 
+          <motion.div
+            className="hero-quick-links"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.32 }}
+          >
             <a
               href="https://github.com/mrqwerty1233"
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub"
+              id="hero-github-link"
+              className="quick-channel-link"
             >
               <FaGithub />
+              <span>github.com/mrqwerty1233</span>
             </a>
 
             <a
-              href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
+              href="mailto:marlmadronero18@gmail.com"
+              id="hero-email-link"
+              className="quick-channel-link"
             >
-              <FaLinkedinIn />
+              <HiOutlineEnvelope />
+              <span>marlmadronero18@gmail.com</span>
+            </a>
+
+            <a
+              href="tel:+639369124592"
+              id="hero-phone-link"
+              className="quick-channel-link"
+            >
+              <HiOutlinePhone />
+              <span>+63 936 912 4592</span>
             </a>
           </motion.div>
         </div>
 
-        <div className="hero-profile-area">
+        <div className="hero-aside-col">
           <ProfileCard />
         </div>
-      </motion.div>
-    </section>
+      </div>
+
+      <div className="container">
+        <motion.div
+          className="hero-metrics-strip"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.38 }}
+        >
+          {heroMetrics.map((metric) => (
+            <div key={metric.label} className="hero-metric-cell">
+              <div className="hero-metric-value">{metric.value}</div>
+              <div className="hero-metric-label">{metric.label}</div>
+              <div className="hero-metric-detail">{metric.detail}</div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
   )
 }
 

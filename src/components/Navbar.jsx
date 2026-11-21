@@ -1,59 +1,116 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { HiMenu, HiX } from "react-icons/hi"
+import { Link, useLocation } from "react-router-dom"
+import { HiMenuAlt4, HiX } from "react-icons/hi"
+import { HiArrowUpRight } from "react-icons/hi2"
+import ThemeToggle from "./ThemeToggle"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
+  const location = useLocation()
+  const isHome = location.pathname === "/"
 
-  // Add shadow/style change on scroll
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 24)
+
+      if (!isHome) return
+      const sections = ["home", "projects", "services", "about", "skills", "experience", "contact"]
+      const scrollPos = window.scrollY + 180
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i])
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sections[i])
+          break
+        }
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isHome])
 
   const closeMenu = () => {
     setMenuOpen(false)
   }
 
-  // Trimmed from 8 items to 6 — Tech & Services are folded into Skills/About
   const navLinks = [
-    { label: "Home",       href: "/#home" },
-    { label: "About",      href: "/#about" },
-    { label: "Skills",     href: "/#skills" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Projects",   href: "/#projects" },
-    { label: "Contact",    href: "/#contact" },
+    { id: "projects",   label: "Work",       href: "/#projects" },
+    { id: "services",   label: "Services",   href: "/#services" },
+    { id: "about",      label: "About",      href: "/#about" },
+    { id: "skills",     label: "Stack",      href: "/#skills" },
+    { id: "experience", label: "Experience", href: "/#experience" },
+    { id: "contact",    label: "Contact",    href: "/#contact" },
   ]
 
   return (
-    <nav className={`nav${scrolled ? " nav-scrolled" : ""}`}>
-      <Link to="/" className="logo" onClick={closeMenu}>
-        VIN
-      </Link>
+    <header className={`site-header${scrolled ? " site-header-scrolled" : ""}`}>
+      <nav className="nav-inner" aria-label="Primary navigation">
+        <div className="nav-brand-group">
+          <Link to="/" className="brand-logo" onClick={closeMenu} id="nav-brand-link">
+            <span className="brand-monogram">VIN</span>
+            <span className="brand-dot" aria-hidden="true">.</span>
+          </Link>
+          <div className="brand-status" title="Available for full-time roles & freelance projects">
+            <span className="status-indicator" aria-hidden="true" />
+            <span className="status-label">Available for Work</span>
+          </div>
+        </div>
 
-      <ul className={menuOpen ? "menu active" : "menu"}>
-        {navLinks.map((link) => (
-          <li key={link.label}>
-            <a href={link.href} onClick={closeMenu}>
-              {link.label}
+        <ul className={`nav-links${menuOpen ? " nav-links-open" : ""}`}>
+          {navLinks.map((link, idx) => {
+            const isActive = isHome ? activeSection === link.id : link.id === "projects"
+            return (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  id={`nav-link-${link.id}`}
+                  className={isActive ? "nav-link active" : "nav-link"}
+                  onClick={closeMenu}
+                >
+                  <span className="nav-link-num">0{idx + 1}</span>
+                  {link.label}
+                </a>
+              </li>
+            )
+          })}
+          <li className="nav-mobile-cta">
+            <a href="/resume.pdf" download className="btn secondary-btn small-btn" onClick={closeMenu}>
+              Download CV
+            </a>
+            <a href="/#contact" className="btn primary-btn small-btn" onClick={closeMenu}>
+              Start a Project <HiArrowUpRight />
             </a>
           </li>
-        ))}
-      </ul>
+        </ul>
 
-      {/* Clean icon toggle instead of raw ☰ character */}
-      <div
-        className="mobile"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
-      >
-        {menuOpen ? <HiX /> : <HiMenu />}
-      </div>
-    </nav>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <a
+            href="/#contact"
+            id="nav-cta-btn"
+            className="btn primary-btn nav-cta-desktop"
+          >
+            <span>Let&apos;s Talk</span>
+            <HiArrowUpRight />
+          </a>
+
+          <button
+            id="nav-mobile-toggle"
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            type="button"
+          >
+            {menuOpen ? <HiX /> : <HiMenuAlt4 />}
+          </button>
+        </div>
+      </nav>
+    </header>
   )
 }
 
